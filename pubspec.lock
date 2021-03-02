@@ -86,7 +86,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "42be6bedd9b42ddddb284dc669db80b804b97fb8"
+      resolved-ref: cca1b75621eb1e69d6ec174d908a69e30c225adf
       url: "https://github.com/tibimate87/flutterScreenSizes.git"
     source: git
     version: "1.0.0"

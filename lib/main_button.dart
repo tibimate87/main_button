@@ -55,7 +55,18 @@ class _MainButtonState extends State<MainButton> {
                   : widget.color,
               borderRadius: BorderRadius.all(Radius.circular(10))),
           width: ScreenSizes.screenWidth(context),
-          height: ScreenSizes.screenHeight(context) / 20,
+          height: ScreenSizes.textSize(
+                  widget.text,
+                  Theme.of(context).textTheme.bodyText1.copyWith(
+                        color: widget.isSignOut
+                            ? Colors.red
+                            : widget.textColor == null
+                                ? Colors.white.withOpacity(opacity)
+                                : widget.textColor,
+                        fontSize: ScreenSizes.screenWidth(context) /
+                            (widget.isPP ? 35 : 25),
+                      )).height +
+              5,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
