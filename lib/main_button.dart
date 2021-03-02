@@ -7,6 +7,7 @@ class MainButton extends StatefulWidget {
   final String text;
   final Color color;
   final Color textColor;
+  final Color imageColor;
   final Function onTap;
   final bool isVisible;
   final bool isSignOut;
@@ -17,6 +18,7 @@ class MainButton extends StatefulWidget {
       @required this.onTap,
       @required this.isVisible,
       this.textColor,
+      this.imageColor,
       this.isSignOut = false,
       this.color,
       this.isPP = false,
