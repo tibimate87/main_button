@@ -6,6 +6,7 @@ import 'package:screensizes/screensizes.dart';
 class MainButton extends StatefulWidget {
   final String text;
   final Color color;
+  final Color textColor;
   final Function onTap;
   final bool isVisible;
   final bool isSignOut;
@@ -15,6 +16,7 @@ class MainButton extends StatefulWidget {
       {@required this.text,
       @required this.onTap,
       @required this.isVisible,
+      this.textColor,
       this.isSignOut = false,
       this.color,
       this.isPP = false,
@@ -73,11 +75,9 @@ class _MainButtonState extends State<MainButton> {
                 style: Theme.of(context).textTheme.bodyText1.copyWith(
                       color: widget.isSignOut
                           ? Colors.red
-                          : widget.color == null
+                          : widget.textColor == null
                               ? Colors.white.withOpacity(opacity)
-                              : Theme.of(context)
-                                  .buttonColor
-                                  .withOpacity(opacity),
+                              : widget.textColor,
                       fontSize: ScreenSizes.screenWidth(context) /
                           (widget.isPP ? 35 : 25),
                     ),
