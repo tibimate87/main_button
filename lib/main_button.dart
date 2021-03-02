@@ -13,6 +13,7 @@ class MainButton extends StatefulWidget {
   final bool isSignOut;
   final bool isPP;
   final String image;
+  final double additionalHeight;
   const MainButton(
       {@required this.text,
       @required this.onTap,
@@ -22,7 +23,8 @@ class MainButton extends StatefulWidget {
       this.isSignOut = false,
       this.color,
       this.isPP = false,
-      this.image});
+      this.image,
+      this.additionalHeight = 0});
 
   @override
   _MainButtonState createState() => _MainButtonState();
@@ -66,7 +68,7 @@ class _MainButtonState extends State<MainButton> {
                         fontSize: ScreenSizes.screenWidth(context) /
                             (widget.isPP ? 35 : 25),
                       )).height +
-              5,
+              widget.additionalHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
