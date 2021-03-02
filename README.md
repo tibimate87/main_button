@@ -2,6 +2,11 @@
 
 A new Flutter package project.
 
+Installation:
+
+  main_button_widget:
+    git: https://github.com/tibimate87/main_button.git
+
 ## Getting Started
 
 This project is a starting point for a Dart
