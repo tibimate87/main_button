@@ -74,7 +74,11 @@ class _MainButtonState extends State<MainButton> {
             children: [
               widget.image != null
                   ? Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.fromLTRB(
+                          8,
+                          widget.additionalHeight / 2,
+                          8,
+                          widget.additionalHeight / 2),
                       child: Image(
                           image: AssetImage(widget.image),
                           color: widget.imageColor),
