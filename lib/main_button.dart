@@ -62,7 +62,7 @@ class _MainButtonState extends State<MainButton> {
                       padding: const EdgeInsets.all(8.0),
                       child: Image(
                         image: AssetImage(widget.image),
-                        color: widget.color == null
+                        color: widget.textColor == null
                             ? Colors.white.withOpacity(opacity)
                             : Theme.of(context)
                                 .buttonColor
