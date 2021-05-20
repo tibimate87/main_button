@@ -14,6 +14,7 @@ class MainButton extends StatefulWidget {
   final bool isPP;
   final String image;
   final double additionalHeight;
+  final double radius;
   const MainButton(
       {@required this.text,
       @required this.onTap,
@@ -24,7 +25,8 @@ class MainButton extends StatefulWidget {
       this.color,
       this.isPP = false,
       this.image,
-      this.additionalHeight = 0});
+      this.additionalHeight = 0,
+      this.radius = 10});
 
   @override
   _MainButtonState createState() => _MainButtonState();
@@ -55,7 +57,7 @@ class _MainButtonState extends State<MainButton> {
               color: widget.color == null
                   ? Theme.of(context).buttonColor.withOpacity(opacity)
                   : widget.color,
-              borderRadius: BorderRadius.all(Radius.circular(10))),
+              borderRadius: BorderRadius.all(Radius.circular(widget.radius))),
           width: ScreenSizes.screenWidth(context),
           height: ScreenSizes.textSize(
                   widget.text,
