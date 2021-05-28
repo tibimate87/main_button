@@ -15,6 +15,7 @@ class MainButton extends StatefulWidget {
   final String image;
   final double additionalHeight;
   final double radius;
+  final TextStyle textStyle;
   const MainButton(
       {@required this.text,
       @required this.onTap,
@@ -26,7 +27,8 @@ class MainButton extends StatefulWidget {
       this.isPP = false,
       this.image,
       this.additionalHeight = 0,
-      this.radius = 10});
+      this.radius = 10,
+      this.textStyle});
 
   @override
   _MainButtonState createState() => _MainButtonState();
@@ -88,15 +90,17 @@ class _MainButtonState extends State<MainButton> {
                   : Container(),
               Text(
                 widget.text,
-                style: Theme.of(context).textTheme.bodyText1.copyWith(
-                      color: widget.isSignOut
-                          ? Colors.red
-                          : widget.textColor == null
-                              ? Colors.white.withOpacity(opacity)
-                              : widget.textColor,
-                      fontSize: ScreenSizes.screenWidth(context) /
-                          (widget.isPP ? 35 : 25),
-                    ),
+                style: widget.textStyle == null
+                    ? Theme.of(context).textTheme.bodyText1.copyWith(
+                          color: widget.isSignOut
+                              ? Colors.red
+                              : widget.textColor == null
+                                  ? Colors.white.withOpacity(opacity)
+                                  : widget.textColor,
+                          fontSize: ScreenSizes.screenWidth(context) /
+                              (widget.isPP ? 35 : 25),
+                        )
+                    : widget.textStyle,
               ),
             ],
           ),
