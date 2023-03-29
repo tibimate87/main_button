@@ -57,13 +57,15 @@ class _MainButtonState extends State<MainButton> {
         child: Container(
           decoration: BoxDecoration(
               color: widget.color == null
-                  ? Theme.of(context).buttonColor.withOpacity(opacity)
+                  ? Theme.of(context)
+                      .scaffoldBackgroundColor
+                      .withOpacity(opacity)
                   : widget.color,
               borderRadius: BorderRadius.all(Radius.circular(widget.radius))),
           width: ScreenSizes.screenWidth(context),
           height: ScreenSizes.textSize(
                   widget.text,
-                  Theme.of(context).textTheme.bodyText1.copyWith(
+                  Theme.of(context).textTheme.bodyLarge.copyWith(
                         color: widget.isSignOut
                             ? Colors.red
                             : widget.textColor == null
@@ -91,7 +93,7 @@ class _MainButtonState extends State<MainButton> {
               Text(
                 widget.text,
                 style: widget.textStyle == null
-                    ? Theme.of(context).textTheme.bodyText1.copyWith(
+                    ? Theme.of(context).textTheme.bodyLarge.copyWith(
                           color: widget.isSignOut
                               ? Colors.red
                               : widget.textColor == null
